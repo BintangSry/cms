@@ -17,9 +17,16 @@ const storage = multer.diskStorage({
   filename: function (req, file, cb) {
     // We expect the fieldname or a body parameter to determine the filename
     // If we are replacing 'hero', the file should be named 'hero.png' or similar based on existing logic.
-    // For now, we will rely on a custom filename passed in req.body.filename or use original name
+    // Use path.basename to prevent path traversal (e.g. ../../../etc/passwd)
     const ext = path.extname(file.originalname).toLowerCase();
-    const finalName = req.body.filename ? `${req.body.filename}${ext}` : file.originalname;
+    const sanitizedFilename = req.body.filename 
+      ? path.basename(req.body.filename) 
+      : path.basename(file.originalname, ext); // remove extension from original name if we use it directly
+    
+    // Fallback if sanitizedFilename is empty after stripping path (e.g. if the input was only `../`)
+    const baseName = sanitizedFilename || 'uploaded_image'; 
+    const finalName = `${baseName}${ext}`;
+    
     cb(null, finalName);
   }
 });

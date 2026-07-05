@@ -3,6 +3,30 @@ const router = express.Router();
 const { readJSON, writeJSON } = require('../utils/jsonHelper');
 const upload = require('../utils/uploadHelper');
 
+const sanitizeHtml = require('sanitize-html');
+
+// Helper to recursively sanitize strings in an object/array
+const sanitizeData = (data) => {
+  if (typeof data === 'string') {
+    // Keep basic formatting but strip dangerous tags like script, object, iframe
+    return sanitizeHtml(data, {
+      allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'iframe']), // Allowed for maps etc.
+      allowedAttributes: {
+        '*': ['class', 'id', 'style', 'href', 'src', 'alt', 'target', 'width', 'height', 'frameborder', 'allowfullscreen']
+      }
+    });
+  } else if (Array.isArray(data)) {
+    return data.map(item => sanitizeData(item));
+  } else if (typeof data === 'object' && data !== null) {
+    const sanitizedObj = {};
+    for (const key in data) {
+      sanitizedObj[key] = sanitizeData(data[key]);
+    }
+    return sanitizedObj;
+  }
+  return data;
+};
+
 // Get all content
 router.get('/content', async (req, res) => {
   try {
@@ -17,7 +41,7 @@ router.get('/content', async (req, res) => {
 router.put('/content/:section', async (req, res) => {
   try {
     const { section } = req.params;
-    const updateData = req.body;
+    const updateData = sanitizeData(req.body);
     const content = await readJSON('content.json');
     
     if (!content[section]) {
@@ -46,7 +70,7 @@ router.get('/settings', async (req, res) => {
 // Update website settings
 router.put('/settings', async (req, res) => {
   try {
-    const updateData = req.body;
+    const updateData = sanitizeData(req.body);
     const settings = await readJSON('setting.json');
     
     settings.website = { ...settings.website, ...updateData };

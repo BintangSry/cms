@@ -6,8 +6,8 @@ const { comparePassword } = require('../utils/authHelper');
 router.post('/login', async (req, res) => {
   try {
     const { username, password } = req.body;
-    const settings = await readJSON('setting.json');
-    const adminConfig = settings.admin;
+    const adminData = await readJSON('admin.json');
+    const adminConfig = adminData.admin;
 
     if (username === adminConfig.username) {
       const isMatch = await comparePassword(password, adminConfig.passwordHash);
