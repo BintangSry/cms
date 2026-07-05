@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased overflow-hidden">
+    
+    <div class="flex h-screen w-full">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="w-64 bg-white border-r border-gray-200 flex-shrink-0 flex flex-col transition-all duration-300">
+            <div class="h-16 flex items-center px-6 border-b border-gray-200">
+                <span class="text-xl font-bold text-gray-900">CMS Admin</span>
+            </div>
+            <nav class="flex-1 overflow-y-auto py-4 px-3 space-y-1" id="sidebar-nav">
+                <a href="#dashboard" class="flex items-center px-3 py-2.5 bg-gray-100 text-primary rounded-lg font-medium group transition-colors">
+                    <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i> Dashboard
+                </a>
+                <a href="#hero" class="flex items-center px-3 py-2.5 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg font-medium group transition-colors">
+                    <i data-lucide="image" class="w-5 h-5 mr-3"></i> Hero
+                </a>
+                <a href="#about" class="flex items-center px-3 py-2.5 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg font-medium group transition-colors">
+                    <i data-lucide="info" class="w-5 h-5 mr-3"></i> About
+                </a>
+                <a href="#services" class="flex items-center px-3 py-2.5 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg font-medium group transition-colors">
+                    <i data-lucide="briefcase" class="w-5 h-5 mr-3"></i> Services
+                </a>
+                <a href="#whyChooseUs" class="flex items-center px-3 py-2.5 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg font-medium group transition-colors">
+                    <i data-lucide="award" class="w-5 h-5 mr-3"></i> Why Choose Us
+                </a>
+                <a href="#gallery" class="flex items-center px-3 py-2.5 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg font-medium group transition-colors">
+                    <i data-lucide="grid" class="w-5 h-5 mr-3"></i> Gallery
+                </a>
+                <a href="#testimonials" class="flex items-center px-3 py-2.5 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg font-medium group transition-colors">
+                    <i data-lucide="message-square" class="w-5 h-5 mr-3"></i> Testimonials
+                </a>
+                <a href="#faq" class="flex items-center px-3 py-2.5 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg font-medium group transition-colors">
+                    <i data-lucide="help-circle" class="w-5 h-5 mr-3"></i> FAQ
+                </a>
+                <a href="#contact" class="flex items-center px-3 py-2.5 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg font-medium group transition-colors">
+                    <i data-lucide="phone" class="w-5 h-5 mr-3"></i> Contact
+                </a>
+                <a href="#footer" class="flex items-center px-3 py-2.5 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg font-medium group transition-colors">
+                    <i data-lucide="layout-template" class="w-5 h-5 mr-3"></i> Footer
+                </a>
+                
+                <div class="pt-4 mt-4 border-t border-gray-200">
+                    <a href="#settings" class="flex items-center px-3 py-2.5 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg font-medium group transition-colors">
+                        <i data-lucide="settings" class="w-5 h-5 mr-3"></i> Settings
+                    </a>
+                    <button id="logout-btn" class="w-full flex items-center px-3 py-2.5 text-red-600 hover:bg-red-50 rounded-lg font-medium group transition-colors mt-2">
+                        <i data-lucide="log-out" class="w-5 h-5 mr-3"></i> Logout
+                    </button>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col h-screen overflow-hidden">
+            <!-- Topbar -->
+            <header class="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-6 shrink-0">
+                <button id="toggle-sidebar" class="p-2 text-gray-500 hover:bg-gray-100 rounded-lg md:hidden">
+                    <i data-lucide="menu"></i>
+                </button>
+                <div class="ml-auto flex items-center space-x-4">
+                    <a href="/" target="_blank" class="text-sm font-medium text-primary hover:underline flex items-center">
+                        <i data-lucide="external-link" class="w-4 h-4 mr-1"></i> View Website
+                    </a>
+                </div>
+            </header>
+
+            <!-- Scrollable Content Area -->
+            <main class="flex-1 overflow-y-auto p-6 md:p-8" id="views-container">
+                
+                <!-- DASHBOARD VIEW -->
+                <div id="view-dashboard" class="cms-view block">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Dashboard Overview</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="card bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                            <div class="text-gray-500 text-sm font-medium mb-2">Website Status</div>
+                            <div class="text-2xl font-bold text-green-600 flex items-center">
+                                <i data-lucide="check-circle" class="w-6 h-6 mr-2"></i> Live
+                            </div>
+                        </div>
+                        <div class="card bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                            <div class="text-gray-500 text-sm font-medium mb-2">Last Updated</div>
+                            <div class="text-xl font-bold text-gray-900" id="dash-last-updated">Just now</div>
+                        </div>
+                    </div>
+                    <div class="mt-8 bg-blue-50 text-blue-800 p-6 rounded-2xl border border-blue-100">
+                        <h3 class="font-bold text-lg mb-2 flex items-center"><i data-lucide="info" class="w-5 h-5 mr-2"></i> Welcome to the CMS</h3>
+                        <p>Select a section from the sidebar to edit your landing page content. Changes are saved immediately and reflect directly on the public website.</p>
+                    </div>
+                </div>
+
+                <!-- HERO VIEW -->
+                <div id="view-hero" class="cms-view hidden">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900">Hero Editor</h2>
+                        <label class="flex items-center cursor-pointer">
+                            <span class="mr-3 text-sm font-medium text-gray-700">Section Active</span>
+                            <input type="checkbox" id="hero-active" class="form-checkbox h-5 w-5 text-primary rounded border-gray-300">
+                        </label>
+                    </div>
+                    <div class="card p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
+                        <form id="form-hero" class="space-y-5">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Title</label>
+                                <input type="text" name="title" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Subtitle</label>
+                                <input type="text" name="subtitle" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                                <textarea name="description" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary outline-none"></textarea>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Button Text</label>
+                                    <input type="text" name="buttonText" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Button URL</label>
+                                    <input type="text" name="buttonUrl" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary outline-none">
+                                </div>
+                            </div>
+                            
+                            <div class="pt-4 border-t border-gray-100">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Hero Image</label>
+                                <div class="flex items-start space-x-6">
+                                    <div class="w-48 h-48 rounded-lg border bg-gray-50 flex items-center justify-center overflow-hidden shrink-0">
+                                        <img id="hero-img-preview" src="/assets/hero.png" class="w-full h-full object-cover" onerror="this.style.display='none'">
+                                    </div>
+                                    <div class="flex-1">
+                                        <input type="file" id="hero-image-upload" accept=".jpg,.jpeg,.png,.webp" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20 cursor-pointer">
+                                        <p class="text-xs text-gray-500 mt-2">Recommended size: 800x800px. Max 5MB.</p>
+                                        <button type="button" onclick="uploadImage('hero-image-upload', 'hero', 'hero-img-preview')" class="mt-4 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium rounded-lg">Upload & Replace Image</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-6 flex justify-end">
+                                <button type="submit" class="btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- ABOUT VIEW -->
+                <div id="view-about" class="cms-view hidden">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900">About Editor</h2>
+                        <label class="flex items-center cursor-pointer">
+                            <span class="mr-3 text-sm font-medium text-gray-700">Section Active</span>
+                            <input type="checkbox" id="about-active" class="form-checkbox h-5 w-5 text-primary rounded border-gray-300">
+                        </label>
+                    </div>
+                    <div class="card p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
+                        <form id="form-about" class="space-y-5">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Title</label>
+                                <input type="text" name="title" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                                <textarea name="description" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary outline-none"></textarea>
+                            </div>
+                            
+                            <div class="pt-4 border-t border-gray-100">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">About Image</label>
+                                <div class="flex items-start space-x-6">
+                                    <div class="w-48 h-48 rounded-lg border bg-gray-50 flex items-center justify-center overflow-hidden shrink-0">
+                                        <img id="about-img-preview" src="/assets/about.png" class="w-full h-full object-cover" onerror="this.style.display='none'">
+                                    </div>
+                                    <div class="flex-1">
+                                        <input type="file" id="about-image-upload" accept=".jpg,.jpeg,.png,.webp" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20">
+                                        <button type="button" onclick="uploadImage('about-image-upload', 'about', 'about-img-preview')" class="mt-4 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium rounded-lg">Upload & Replace Image</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-6 flex justify-end">
+                                <button type="submit" class="btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- SERVICES VIEW (Array Editor) -->
+                <div id="view-services" class="cms-view hidden">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900">Services Editor</h2>
+                        <label class="flex items-center cursor-pointer">
+                            <span class="mr-3 text-sm font-medium text-gray-700">Section Active</span>
+                            <input type="checkbox" id="services-active" class="form-checkbox h-5 w-5 text-primary rounded border-gray-300" onchange="toggleSection('services', this.checked)">
+                        </label>
+                    </div>
+                    <div class="card p-6 bg-white rounded-2xl shadow-sm border border-gray-100 mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Section Title</label>
+                        <div class="flex gap-4">
+                            <input type="text" id="services-title" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg outline-none">
+                            <button type="button" onclick="saveSectionTitle('services')" class="btn-secondary whitespace-nowrap">Save Title</button>
+                        </div>
+                    </div>
+                    
+                    <div id="services-list" class="space-y-4 mb-6">
+                        <!-- Rendered via JS -->
+                    </div>
+                    
+                    <button type="button" onclick="addServiceItem()" class="w-full py-4 border-2 border-dashed border-gray-300 rounded-2xl text-gray-500 hover:text-primary hover:border-primary hover:bg-primary/5 transition-colors flex items-center justify-center font-medium">
+                        <i data-lucide="plus" class="w-5 h-5 mr-2"></i> Add New Service
+                    </button>
+                </div>
+                
+                <!-- OTHER ARRAY VIEWS PLACEHOLDERS (Why Choose Us, Gallery, Testimonials, FAQ) -->
+                <div id="view-whyChooseUs" class="cms-view hidden">
+                    <!-- Similar to Services -->
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900">Why Choose Us Editor</h2>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" id="why-active" class="form-checkbox h-5 w-5 text-primary rounded border-gray-300" onchange="toggleSection('whyChooseUs', this.checked)">
+                        </label>
+                    </div>
+                    <div class="card p-6 bg-white rounded-2xl shadow-sm border border-gray-100 mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Section Title</label>
+                        <div class="flex gap-4">
+                            <input type="text" id="why-title" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg outline-none">
+                            <button type="button" onclick="saveSectionTitle('whyChooseUs')" class="btn-secondary whitespace-nowrap">Save Title</button>
+                        </div>
+                    </div>
+                    <div id="why-list" class="space-y-4 mb-6"></div>
+                    <button type="button" onclick="addWhyItem()" class="w-full py-4 border-2 border-dashed border-gray-300 rounded-2xl text-gray-500 hover:text-primary hover:border-primary transition-colors flex items-center justify-center font-medium">
+                        <i data-lucide="plus" class="w-5 h-5 mr-2"></i> Add Item
+                    </button>
+                </div>
+
+                <div id="view-gallery" class="cms-view hidden">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900">Gallery Editor</h2>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" id="gallery-active" class="form-checkbox h-5 w-5 text-primary rounded border-gray-300" onchange="toggleSection('gallery', this.checked)">
+                        </label>
+                    </div>
+                    <div class="card p-6 bg-white rounded-2xl shadow-sm border border-gray-100 mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Section Title</label>
+                        <div class="flex gap-4">
+                            <input type="text" id="gallery-title" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg outline-none">
+                            <button type="button" onclick="saveSectionTitle('gallery')" class="btn-secondary">Save Title</button>
+                        </div>
+                    </div>
+                    <div id="gallery-list" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6"></div>
+                    <button type="button" onclick="addGalleryItem()" class="w-full py-4 border-2 border-dashed border-gray-300 rounded-2xl text-gray-500 hover:text-primary hover:border-primary transition-colors flex items-center justify-center font-medium">
+                        <i data-lucide="plus" class="w-5 h-5 mr-2"></i> Add Gallery Slot
+                    </button>
+                </div>
+
+                <!-- TESTIMONIALS -->
+                <div id="view-testimonials" class="cms-view hidden">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900">Testimonials Editor</h2>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" id="testi-active" class="form-checkbox h-5 w-5 text-primary rounded border-gray-300" onchange="toggleSection('testimonials', this.checked)">
+                        </label>
+                    </div>
+                    <div class="card p-6 bg-white rounded-2xl shadow-sm border border-gray-100 mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Section Title</label>
+                        <div class="flex gap-4">
+                            <input type="text" id="testi-title" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg outline-none">
+                            <button type="button" onclick="saveSectionTitle('testimonials')" class="btn-secondary">Save Title</button>
+                        </div>
+                    </div>
+                    <div id="testi-list" class="space-y-4 mb-6"></div>
+                    <button type="button" onclick="addTestiItem()" class="w-full py-4 border-2 border-dashed border-gray-300 rounded-2xl text-gray-500 hover:text-primary hover:border-primary transition-colors flex items-center justify-center font-medium">
+                        <i data-lucide="plus" class="w-5 h-5 mr-2"></i> Add Testimonial
+                    </button>
+                </div>
+
+                <!-- FAQ -->
+                <div id="view-faq" class="cms-view hidden">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900">FAQ Editor</h2>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" id="faq-active" class="form-checkbox h-5 w-5 text-primary rounded border-gray-300" onchange="toggleSection('faq', this.checked)">
+                        </label>
+                    </div>
+                    <div class="card p-6 bg-white rounded-2xl shadow-sm border border-gray-100 mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Section Title</label>
+                        <div class="flex gap-4">
+                            <input type="text" id="faq-title" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg outline-none">
+                            <button type="button" onclick="saveSectionTitle('faq')" class="btn-secondary">Save Title</button>
+                        </div>
+                    </div>
+                    <div id="faq-list" class="space-y-4 mb-6"></div>
+                    <button type="button" onclick="addFaqItem()" class="w-full py-4 border-2 border-dashed border-gray-300 rounded-2xl text-gray-500 hover:text-primary hover:border-primary transition-colors flex items-center justify-center font-medium">
+                        <i data-lucide="plus" class="w-5 h-5 mr-2"></i> Add FAQ
+                    </button>
+                </div>
+
+                <!-- CONTACT VIEW -->
+                <div id="view-contact" class="cms-view hidden">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900">Contact Editor</h2>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" id="contact-active" class="form-checkbox h-5 w-5 text-primary rounded border-gray-300">
+                        </label>
+                    </div>
+                    <div class="card p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
+                        <form id="form-contact" class="space-y-5">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Title</label>
+                                <input type="text" name="title" class="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none">
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                                    <input type="text" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">WhatsApp Number</label>
+                                    <input type="text" name="whatsapp" class="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none" placeholder="e.g. 1234567890">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                    <input type="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Address</label>
+                                    <input type="text" name="address" class="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Google Maps Embed (iframe)</label>
+                                <textarea name="googleMapsEmbed" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none font-mono text-sm"></textarea>
+                            </div>
+                            <div class="pt-6 flex justify-end">
+                                <button type="submit" class="btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- FOOTER VIEW -->
+                <div id="view-footer" class="cms-view hidden">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Footer Editor</h2>
+                    <div class="card p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
+                        <form id="form-footer" class="space-y-5">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Copyright Text</label>
+                                <input type="text" name="copyright" class="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                                <textarea name="description" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none"></textarea>
+                            </div>
+                            
+                            <h3 class="text-lg font-bold pt-4 border-t border-gray-100">Social Media Links</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Instagram</label>
+                                    <input type="url" name="instagram" class="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Facebook</label>
+                                    <input type="url" name="facebook" class="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">LinkedIn</label>
+                                    <input type="url" name="linkedin" class="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">TikTok</label>
+                                    <input type="url" name="tiktok" class="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">YouTube</label>
+                                    <input type="url" name="youtube" class="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none">
+                                </div>
+                            </div>
+                            <div class="pt-6 flex justify-end">
+                                <button type="submit" class="btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- SETTINGS VIEW -->
+                <div id="view-settings" class="cms-view hidden">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Website Settings</h2>
+                    <div class="card p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
+                        <form id="form-settings" class="space-y-5">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Website Name</label>
+                                <input type="text" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Meta Title (SEO)</label>
+                                <input type="text" name="metaTitle" class="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Meta Description (SEO)</label>
+                                <textarea name="metaDescription" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Primary Color (Hex)</label>
+                                <div class="flex items-center space-x-3">
+                                    <input type="color" name="primaryColor" class="h-10 w-10 border-0 rounded cursor-pointer">
+                                    <input type="text" name="primaryColorText" class="px-4 py-2 border border-gray-300 rounded-lg outline-none font-mono" placeholder="#2563eb">
+                                </div>
+                            </div>
+                            <div class="pt-6 flex justify-end">
+                                <button type="submit" class="btn-primary">Save Settings</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-3"></div>
+
+    <script src="/admin/js/admin.js"></script>
+</body>
+</html>

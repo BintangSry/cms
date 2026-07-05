@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="meta-title">Loading...</title>
+    <meta name="description" id="meta-description" content="">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Tailwind CSS (output) -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <style>
+        /* Loading overlay to hide unpopulated content briefly */
+        #app-loader {
+            position: fixed;
+            inset: 0;
+            background: white;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s;
+        }
+    </style>
+</head>
+<body class="text-gray-800 bg-white font-sans antialiased">
+    
+    <div id="app-loader">
+        <div class="animate-pulse flex flex-col items-center">
+            <div class="h-8 w-8 bg-gray-200 rounded-full mb-4"></div>
+            <p class="text-gray-500 font-medium">Loading...</p>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-gray-100" id="navbar">
+        <div class="container-custom">
+            <div class="flex justify-between items-center h-20">
+                <a href="#" class="text-2xl font-bold tracking-tight" id="nav-logo">Logo</a>
+                
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium hover:text-primary transition-colors">About</a>
+                    <a href="#services" class="text-sm font-medium hover:text-primary transition-colors">Services</a>
+                    <a href="#gallery" class="text-sm font-medium hover:text-primary transition-colors">Gallery</a>
+                    <a href="#contact" class="btn-primary py-2 px-4 rounded-lg">Contact Us</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 focus:outline-none" id="mobile-menu-btn" aria-label="Toggle Menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Nav Dropdown -->
+        <div class="md:hidden hidden bg-white border-b border-gray-100 absolute w-full" id="mobile-menu">
+            <div class="px-5 py-4 flex flex-col space-y-4">
+                <a href="#about" class="text-base font-medium mobile-link">About</a>
+                <a href="#services" class="text-base font-medium mobile-link">Services</a>
+                <a href="#gallery" class="text-base font-medium mobile-link">Gallery</a>
+                <a href="#contact" class="text-base font-medium text-primary mobile-link">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="pt-32 pb-16 lg:pt-48 lg:pb-24 overflow-hidden">
+            <div class="container-custom">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                    <div class="w-full lg:w-1/2 flex flex-col items-start text-left">
+                        <span id="hero-subtitle" class="text-primary font-semibold tracking-wider uppercase text-sm mb-4"></span>
+                        <h1 id="hero-title" class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900"></h1>
+                        <p id="hero-description" class="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed"></p>
+                        <div class="flex flex-wrap gap-4">
+                            <a id="hero-btn" href="#" class="btn-primary"></a>
+                            <a href="#services" class="btn-secondary">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                            <img id="hero-image" src="" alt="Hero Image" class="w-full h-auto object-cover aspect-[4/3] lg:aspect-square">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-padding bg-gray-50">
+            <div class="container-custom">
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20">
+                    <div class="w-full lg:w-1/2 flex flex-col items-start text-left">
+                        <h2 id="about-title" class="text-3xl md:text-4xl font-bold mb-6 text-gray-900"></h2>
+                        <p id="about-description" class="text-lg text-gray-600 leading-relaxed mb-6"></p>
+                    </div>
+                    <div class="w-full lg:w-1/2">
+                        <img id="about-image" src="" alt="About Us" class="w-full h-auto object-cover rounded-2xl shadow-lg aspect-[4/3]">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section-padding">
+            <div class="container-custom">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 id="services-title" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4"></h2>
+                </div>
+                <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Cards will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="whyChooseUs" class="section-padding bg-gray-900 text-white">
+            <div class="container-custom">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 id="why-title" class="text-3xl md:text-4xl font-bold mb-4"></h2>
+                </div>
+                <div id="why-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <!-- Items will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section-padding bg-gray-50">
+            <div class="container-custom">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 id="gallery-title" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4"></h2>
+                </div>
+                <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Gallery items injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section-padding">
+            <div class="container-custom">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 id="testimonials-title" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4"></h2>
+                </div>
+                <div id="testimonials-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Testimonial cards injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section-padding bg-gray-50">
+            <div class="container-custom max-w-3xl">
+                <div class="text-center mb-12">
+                    <h2 id="faq-title" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4"></h2>
+                </div>
+                <div id="faq-list" class="space-y-4">
+                    <!-- FAQ accordions injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding">
+            <div class="container-custom">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 id="contact-title" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4"></h2>
+                </div>
+                <div class="flex flex-col lg:flex-row gap-12 bg-white rounded-2xl shadow-soft overflow-hidden border border-gray-100">
+                    <div class="w-full lg:w-1/3 p-8 lg:p-12 bg-gray-50">
+                        <h3 class="text-xl font-bold mb-6">Get in Touch</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i data-lucide="map-pin" class="text-primary mt-1 mr-4 shrink-0"></i>
+                                <div>
+                                    <p class="font-medium">Address</p>
+                                    <p id="contact-address" class="text-gray-600 mt-1"></p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-lucide="phone" class="text-primary mt-1 mr-4 shrink-0"></i>
+                                <div>
+                                    <p class="font-medium">Phone</p>
+                                    <p id="contact-phone" class="text-gray-600 mt-1"></p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-lucide="mail" class="text-primary mt-1 mr-4 shrink-0"></i>
+                                <div>
+                                    <p class="font-medium">Email</p>
+                                    <p id="contact-email" class="text-gray-600 mt-1"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-10">
+                            <a id="contact-whatsapp" href="#" target="_blank" class="w-full btn-primary !bg-[#25D366] hover:!bg-[#20b858]">
+                                <i data-lucide="message-circle" class="mr-2"></i> Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-2/3 h-64 lg:h-auto min-h-[300px]" id="contact-map">
+                        <!-- Map embedded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-gray-900 text-gray-300 py-12 border-t border-gray-800">
+        <div class="container-custom">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+                <div>
+                    <h4 id="footer-logo" class="text-2xl font-bold text-white mb-2"></h4>
+                    <p id="footer-description" class="text-gray-400 max-w-sm"></p>
+                </div>
+                <div class="flex space-x-4" id="footer-socials">
+                    <!-- Social icons injected here -->
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+                <p id="footer-copyright"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "isActive": true,
+    "title": "Welcome to Our Platform",
+    "subtitle": "Innovating the Future",
+    "description": "We provide the best solutions for your business needs. Fast, reliable, and scalable.",
+    "buttonText": "Get Started",
+    "buttonUrl": "#contact",
+    "image": "hero.png"
+  },
+  "about": {
+    "isActive": true,
+    "title": "About Us",
+    "description": "We are a team of passionate individuals dedicated to delivering high-quality products. Our mission is to simplify technology for everyone.",
+    "image": "about.png"
+  },
+  "services": {
+    "isActive": true,
+    "title": "Our Services",
+    "items": [
+      {
+        "id": 1,
+        "name": "Web Development",
+        "description": "Custom websites built with modern technologies.",
+        "icon": "globe",
+        "isActive": true
+      },
+      {
+        "id": 2,
+        "name": "Mobile Apps",
+        "description": "Native and cross-platform mobile applications.",
+        "icon": "smartphone",
+        "isActive": true
+      }
+    ]
+  },
+  "whyChooseUs": {
+    "isActive": true,
+    "title": "Why Choose Us",
+    "items": [
+      {
+        "title": "Fast Performance",
+        "description": "Optimized for speed and efficiency."
+      },
+      {
+        "title": "Secure",
+        "description": "Top-notch security practices."
+      },
+      {
+        "title": "24/7 Support",
+        "description": "Always here to help you."
+      }
+    ]
+  },
+  "gallery": {
+    "isActive": true,
+    "title": "Our Gallery",
+    "items": [
+      {
+        "id": "gallery-1",
+        "image": "gallery-1.png",
+        "caption": "Project Alpha",
+        "altText": "Project Alpha workspace"
+      },
+      {
+        "id": "gallery-2",
+        "image": "gallery-2.png",
+        "caption": "Team Meeting",
+        "altText": "Team discussing ideas"
+      },
+      {
+        "id": "gallery-3",
+        "image": "gallery-3.png",
+        "caption": "Office Space",
+        "altText": "Modern office space"
+      }
+    ]
+  },
+  "testimonials": {
+    "isActive": true,
+    "title": "What Our Clients Say",
+    "items": [
+      {
+        "name": "John Doe",
+        "position": "CEO at TechCorp",
+        "review": "An absolute pleasure to work with. They delivered exactly what we needed.",
+        "photo": "user-1.png"
+      },
+      {
+        "name": "Jane Smith",
+        "position": "Marketing Director",
+        "review": "Their attention to detail and design is unmatched.",
+        "photo": "user-2.png"
+      }
+    ]
+  },
+  "faq": {
+    "isActive": true,
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "How long does a project take?",
+        "answer": "It depends on the scope, but typically 2-4 weeks."
+      },
+      {
+        "question": "Do you offer ongoing support?",
+        "answer": "Yes, we have maintenance plans available."
+      }
+    ]
+  },
+  "contact": {
+    "isActive": true,
+    "title": "Contact Us",
+    "phone": "+1 234 567 890",
+    "whatsapp": "1234567890",
+    "email": "hello@example.com",
+    "address": "123 Tech Street, Silicon Valley, CA",
+    "googleMapsEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0645470557416!2d-122.41941558468205!3d37.77492957975971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050f14!2sTwitter+HQ!5e0!3m2!1sen!2sus!4v1565215039396!5m2!1sen!2sus\" width=\"100%\" height=\"300\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\"></iframe>"
+  },
+  "footer": {
+    "copyright": "© 2026 Lightweight CMS. All rights reserved.",
+    "description": "Building modern digital experiences.",
+    "social": {
+      "instagram": "https://instagram.com",
+      "facebook": "https://facebook.com",
+      "linkedin": "https://linkedin.com",
+      "tiktok": "https://tiktok.com",
+      "youtube": "https://youtube.com"
+    }
+  }
+}
