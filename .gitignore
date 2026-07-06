@@ -125,3 +125,7 @@ dist
 
 # Tailwind CSS (optional if you don't want to track generated CSS, but since we rely on it, we might want to track it.
 # Usually, built CSS is ignored if there's a build step in production, but we will leave public/css/style.css tracked so it works out of the box)
+
+# Uploads
+uploads/*
+!uploads/.gitkeep

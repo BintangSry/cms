@@ -1,19 +1,22 @@
 {
-  "name": "cms2",
+  "name": "tailwind-landing-page-cms",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
+  "description": "A lightweight CMS for managing landing pages, built with Express and Tailwind CSS.",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tailwindcss -i ./public/css/input.css -o ./public/css/style.css --watch & node server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "tailwindcss -i ./public/css/input.css -o ./public/css/style.css"
   },
-  "keywords": [],
+  "keywords": [
+    "cms",
+    "tailwind",
+    "landing-page",
+    "express"
+  ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "type": "commonjs",
   "dependencies": {
     "bcrypt": "^6.0.0",
