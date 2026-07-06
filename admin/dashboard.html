@@ -80,13 +80,13 @@
                 <div id="view-dashboard" class="cms-view block">
                     <h2 class="text-2xl font-bold text-gray-900 mb-6">Dashboard Overview</h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="card bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                        <div class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-md transition-shadow duration-300 border border-gray-100">
                             <div class="text-gray-500 text-sm font-medium mb-2">Website Status</div>
                             <div class="text-2xl font-bold text-green-600 flex items-center">
                                 <i data-lucide="check-circle" class="w-6 h-6 mr-2"></i> Live
                             </div>
                         </div>
-                        <div class="card bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                        <div class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-md transition-shadow duration-300 border border-gray-100">
                             <div class="text-gray-500 text-sm font-medium mb-2">Last Updated</div>
                             <div class="text-xl font-bold text-gray-900" id="dash-last-updated">Just now</div>
                         </div>
@@ -106,7 +106,7 @@
                             <input type="checkbox" id="hero-active" class="form-checkbox h-5 w-5 text-primary rounded border-gray-300">
                         </label>
                     </div>
-                    <div class="card p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
+                    <div class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-md transition-shadow duration-300 border border-gray-100">
                         <form id="form-hero" class="space-y-5">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">Title</label>
@@ -146,7 +146,7 @@
                             </div>
 
                             <div class="pt-6 flex justify-end">
-                                <button type="submit" class="btn-primary">Save Changes</button>
+                                <button type="submit" class="inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-primary hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-200 shadow-sm hover:shadow-md">Save Changes</button>
                             </div>
                         </form>
                     </div>
@@ -161,7 +161,7 @@
                             <input type="checkbox" id="about-active" class="form-checkbox h-5 w-5 text-primary rounded border-gray-300">
                         </label>
                     </div>
-                    <div class="card p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
+                    <div class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-md transition-shadow duration-300 border border-gray-100">
                         <form id="form-about" class="space-y-5">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">Title</label>
@@ -186,7 +186,7 @@
                             </div>
 
                             <div class="pt-6 flex justify-end">
-                                <button type="submit" class="btn-primary">Save Changes</button>
+                                <button type="submit" class="inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-primary hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-200 shadow-sm hover:shadow-md">Save Changes</button>
                             </div>
                         </form>
                     </div>
@@ -201,11 +201,11 @@
                             <input type="checkbox" id="services-active" class="form-checkbox h-5 w-5 text-primary rounded border-gray-300" onchange="toggleSection('services', this.checked)">
                         </label>
                     </div>
-                    <div class="card p-6 bg-white rounded-2xl shadow-sm border border-gray-100 mb-6">
+                    <div class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-md transition-shadow duration-300 border border-gray-100 mb-6">
                         <label class="block text-sm font-medium text-gray-700 mb-1">Section Title</label>
                         <div class="flex gap-4">
                             <input type="text" id="services-title" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg outline-none">
-                            <button type="button" onclick="saveSectionTitle('services')" class="btn-secondary whitespace-nowrap">Save Title</button>
+                            <button type="button" onclick="saveSectionTitle('services')" class="inline-flex justify-center items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-xl text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-200 shadow-sm whitespace-nowrap">Save Title</button>
                         </div>
                     </div>
                     
@@ -227,11 +227,11 @@
                             <input type="checkbox" id="why-active" class="form-checkbox h-5 w-5 text-primary rounded border-gray-300" onchange="toggleSection('whyChooseUs', this.checked)">
                         </label>
                     </div>
-                    <div class="card p-6 bg-white rounded-2xl shadow-sm border border-gray-100 mb-6">
+                    <div class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-md transition-shadow duration-300 border border-gray-100 mb-6">
                         <label class="block text-sm font-medium text-gray-700 mb-1">Section Title</label>
                         <div class="flex gap-4">
                             <input type="text" id="why-title" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg outline-none">
-                            <button type="button" onclick="saveSectionTitle('whyChooseUs')" class="btn-secondary whitespace-nowrap">Save Title</button>
+                            <button type="button" onclick="saveSectionTitle('whyChooseUs')" class="inline-flex justify-center items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-xl text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-200 shadow-sm whitespace-nowrap">Save Title</button>
                         </div>
                     </div>
                     <div id="why-list" class="space-y-4 mb-6"></div>
@@ -247,11 +247,11 @@
                             <input type="checkbox" id="gallery-active" class="form-checkbox h-5 w-5 text-primary rounded border-gray-300" onchange="toggleSection('gallery', this.checked)">
                         </label>
                     </div>
-                    <div class="card p-6 bg-white rounded-2xl shadow-sm border border-gray-100 mb-6">
+                    <div class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-md transition-shadow duration-300 border border-gray-100 mb-6">
                         <label class="block text-sm font-medium text-gray-700 mb-1">Section Title</label>
                         <div class="flex gap-4">
                             <input type="text" id="gallery-title" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg outline-none">
-                            <button type="button" onclick="saveSectionTitle('gallery')" class="btn-secondary">Save Title</button>
+                            <button type="button" onclick="saveSectionTitle('gallery')" class="inline-flex justify-center items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-xl text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-200 shadow-sm">Save Title</button>
                         </div>
                     </div>
                     <div id="gallery-list" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6"></div>
@@ -268,11 +268,11 @@
                             <input type="checkbox" id="testi-active" class="form-checkbox h-5 w-5 text-primary rounded border-gray-300" onchange="toggleSection('testimonials', this.checked)">
                         </label>
                     </div>
-                    <div class="card p-6 bg-white rounded-2xl shadow-sm border border-gray-100 mb-6">
+                    <div class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-md transition-shadow duration-300 border border-gray-100 mb-6">
                         <label class="block text-sm font-medium text-gray-700 mb-1">Section Title</label>
                         <div class="flex gap-4">
                             <input type="text" id="testi-title" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg outline-none">
-                            <button type="button" onclick="saveSectionTitle('testimonials')" class="btn-secondary">Save Title</button>
+                            <button type="button" onclick="saveSectionTitle('testimonials')" class="inline-flex justify-center items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-xl text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-200 shadow-sm">Save Title</button>
                         </div>
                     </div>
                     <div id="testi-list" class="space-y-4 mb-6"></div>
@@ -289,11 +289,11 @@
                             <input type="checkbox" id="faq-active" class="form-checkbox h-5 w-5 text-primary rounded border-gray-300" onchange="toggleSection('faq', this.checked)">
                         </label>
                     </div>
-                    <div class="card p-6 bg-white rounded-2xl shadow-sm border border-gray-100 mb-6">
+                    <div class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-md transition-shadow duration-300 border border-gray-100 mb-6">
                         <label class="block text-sm font-medium text-gray-700 mb-1">Section Title</label>
                         <div class="flex gap-4">
                             <input type="text" id="faq-title" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg outline-none">
-                            <button type="button" onclick="saveSectionTitle('faq')" class="btn-secondary">Save Title</button>
+                            <button type="button" onclick="saveSectionTitle('faq')" class="inline-flex justify-center items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-xl text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-200 shadow-sm">Save Title</button>
                         </div>
                     </div>
                     <div id="faq-list" class="space-y-4 mb-6"></div>
@@ -310,7 +310,7 @@
                             <input type="checkbox" id="contact-active" class="form-checkbox h-5 w-5 text-primary rounded border-gray-300">
                         </label>
                     </div>
-                    <div class="card p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
+                    <div class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-md transition-shadow duration-300 border border-gray-100">
                         <form id="form-contact" class="space-y-5">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">Title</label>
@@ -339,7 +339,7 @@
                                 <textarea name="googleMapsEmbed" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg outline-none font-mono text-sm"></textarea>
                             </div>
                             <div class="pt-6 flex justify-end">
-                                <button type="submit" class="btn-primary">Save Changes</button>
+                                <button type="submit" class="inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-primary hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-200 shadow-sm hover:shadow-md">Save Changes</button>
                             </div>
                         </form>
                     </div>
@@ -348,7 +348,7 @@
                 <!-- FOOTER VIEW -->
                 <div id="view-footer" class="cms-view hidden">
                     <h2 class="text-2xl font-bold text-gray-900 mb-6">Footer Editor</h2>
-                    <div class="card p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
+                    <div class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-md transition-shadow duration-300 border border-gray-100">
                         <form id="form-footer" class="space-y-5">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">Copyright Text</label>
@@ -383,7 +383,7 @@
                                 </div>
                             </div>
                             <div class="pt-6 flex justify-end">
-                                <button type="submit" class="btn-primary">Save Changes</button>
+                                <button type="submit" class="inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-primary hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-200 shadow-sm hover:shadow-md">Save Changes</button>
                             </div>
                         </form>
                     </div>
@@ -392,7 +392,7 @@
                 <!-- SETTINGS VIEW -->
                 <div id="view-settings" class="cms-view hidden">
                     <h2 class="text-2xl font-bold text-gray-900 mb-6">Website Settings</h2>
-                    <div class="card p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
+                    <div class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-md transition-shadow duration-300 border border-gray-100">
                         <form id="form-settings" class="space-y-5">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">Website Name</label>
@@ -414,7 +414,7 @@
                                 </div>
                             </div>
                             <div class="pt-6 flex justify-end">
-                                <button type="submit" class="btn-primary">Save Settings</button>
+                                <button type="submit" class="inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-primary hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-200 shadow-sm hover:shadow-md">Save Settings</button>
                             </div>
                         </form>
                     </div>

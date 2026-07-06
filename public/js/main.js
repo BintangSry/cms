@@ -66,7 +66,7 @@ function renderContent(content) {
         grid.innerHTML = '';
         data.items.filter(item => item.isActive).forEach(item => {
             grid.innerHTML += `
-                <div class="card group cursor-pointer">
+                <div class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-md transition-shadow duration-300 border border-gray-100 group cursor-pointer">
                     <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                         <i data-lucide="${item.icon || 'star'}"></i>
                     </div>
@@ -121,7 +121,7 @@ function renderContent(content) {
         grid.innerHTML = '';
         data.items.forEach(item => {
             grid.innerHTML += `
-                <div class="card relative p-8">
+                <div class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-md transition-shadow duration-300 border border-gray-100 relative p-8">
                     <i data-lucide="quote" class="absolute top-8 right-8 w-12 h-12 text-gray-100"></i>
                     <div class="relative z-10">
                         <p class="text-gray-600 italic mb-6 text-lg leading-relaxed">"${escapeHtml(item.review)}"</p>

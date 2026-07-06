@@ -6,7 +6,7 @@
     "description": "We provide the best solutions for your business needs. Fast, reliable, and scalable.",
     "buttonText": "Get Started",
     "buttonUrl": "#contact",
-    "image": "hero.png"
+    "image": "Screenshot From 2026-06-19 23-38-03.png"
   },
   "about": {
     "isActive": true,
@@ -30,6 +30,20 @@
         "name": "Mobile Apps",
         "description": "Native and cross-platform mobile applications.",
         "icon": "smartphone",
+        "isActive": true
+      },
+      {
+        "id": 1783340961227,
+        "name": "New Service",
+        "description": "",
+        "icon": "star",
+        "isActive": true
+      },
+      {
+        "id": 1783340962927,
+        "name": "New Service",
+        "description": "",
+        "icon": "star",
         "isActive": true
       }
     ]
